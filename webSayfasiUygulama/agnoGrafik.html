@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGNO Çizgi Grafiği</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Dönem', 'AGNO'],
+                ['2021-2022 Güz',  2.31],
+                ['2021-2022 Bahar',  2.70],
+                ['2022-2023 Güz',  2.78],
+                ['2022-2023 Bahar',  3.09],
+                ['2023-2024 Güz',  3.04]
+            ]);
+
+            var options = {
+                title: 'AGNO Değerleri',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                backgroundColor: 'transparent'
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <style>
+        body {
+            background-image: url('deneme.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #curve_chart {
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dönemlere göre ortalamam</h1>
+    <br>
+    <div id="curve_chart"></div>
+
+    <ul>
+        <li><a href="Anasayfa.html">Anasayfaya gitmek icin</a></li>
+    </ul>
+
+    <footer>
+        <br>
+        <p align="right">Telif Hakkı © 2024 Barış Özkan. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
